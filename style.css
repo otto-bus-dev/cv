@@ -1,0 +1,494 @@
+:root {
+  --base: #191724;
+  --surface: #1f1d2e;
+  --overlay: #26233a;
+  --highlight: #eb6f92;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ebbcba;
+  --pine: #31748f;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+  --text: #e0def4;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--base);
+  color: var(--text);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 320px;
+  background: var(--surface);
+  color: var(--text);
+  /* Add margin and rounded border */
+  margin: 2rem 0 2rem 24px;
+  border-radius: 8px;
+  box-shadow: 0 6px 32px rgba(44, 62, 80, 0.12);
+  /* border: 2px solid var(--overlay); */
+
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 48px);
+  /* So the margin doesn't make sidebar overflow */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--rose);
+  margin-bottom: 1.2rem;
+  background: var(--base);
+  display: block;
+  /* Centered by flex already */
+}
+
+.profile h1 {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  color: var(--gold);
+  text-align: center;
+}
+
+.profile h2 {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.15rem;
+  font-weight: normal;
+  color: var(--rose);
+  text-align: center;
+}
+
+.contact {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  vertical-align: bottom;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact a {
+  color: var(--foam);
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.2s;
+  display: inline-block;
+  width: 25%;
+}
+
+.contact a:hover {
+  color: var(--highlight);
+}
+
+.nav {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition:
+    color 0.2s,
+    background 0.2s;
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+  display: block;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: var(--highlight);
+  background: var(--overlay);
+}
+
+.content {
+  margin-left: 344px; /* sidebar width + left margin */
+  padding: 2rem 2rem;
+  width: 100%;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  background: var(--base);
+}
+
+section {
+  margin-bottom: 2rem;
+  background: var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
+  padding: 1.5rem 1rem;
+}
+
+h2 {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--rose);
+}
+
+.experience:last-child,
+.education:last-child {
+  padding-bottom: 1rem;
+  margin-bottom: O;
+  border-bottom: none;
+}
+
+.experience,
+.education {
+  padding-bottom: 4rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--overlay);
+}
+
+.experience h3,
+.education h3 {
+  margin: 0.2rem 0;
+  font-size: 1.1rem;
+  color: var(--pine);
+  display: inline-block;
+}
+
+.experience h4,
+.education h4 {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: var(--rose);
+}
+
+.date {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--muted);
+  float: right;
+}
+
+.skills,
+.certifications,
+.projects,
+.languages {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills li,
+.certifications li,
+.projects li,
+.languages li {
+  background: var(--overlay);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  display: inline-block;
+  color: var(--foam);
+}
+.skills li.foam {
+  color: var(--foam);
+}
+.skills li.gold {
+  color: var(--gold);
+}
+.skills li.iris {
+  color: var(--iris);
+}
+.skills li.pine {
+  color: var(--pine);
+}
+
+.skills li {
+  color: var(--iris);
+}
+.certifications li {
+  color: var(--rose);
+}
+
+.projects li {
+  color: var(--pine);
+}
+
+.languages li {
+  color: var(--gold);
+}
+
+footer {
+  text-align: center;
+  background: var(--surface);
+  color: var(--muted);
+  padding: 1rem 0;
+  margin-top: 2rem;
+  border-top: 3px solid var(--highlight);
+  font-size: 0.95rem;
+  border-radius: 0 0 8px 8px;
+}
+.bar-graph {
+  margin-top: 2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.bar {
+  margin-bottom: 16px;
+}
+
+.bar-graph .category {
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.bar-inner span {
+  display: inline-block;
+  color: var(--base);
+  font-weight: bold;
+}
+
+.bar-inner div {
+  /* display: none; */
+  background: var(--base);
+  color: white;
+  padding: 0.5rem;
+  border-top: var(--base) solid 1px;
+  border-radius: 0px 0 3px 3px;
+}
+
+.bar-inner.main {
+  border-radius: 3px;
+  width: 300px;
+  display: inline-block;
+  height: 18px;
+  /* margin-left: 1px; */
+  vertical-align: middle;
+  text-align: center;
+}
+.bar-inner {
+  /* display: none; */
+  border-radius: 3px;
+  width: 300px;
+  display: inline-block;
+  height: 40px;
+  /* margin-left: 1px; */
+  vertical-align: middle;
+  text-align: center;
+}
+
+.bar-inner.blue {
+  background: var(--foam);
+}
+
+.bar-inner.iris {
+  background: var(--iris);
+}
+.bar-inner.red {
+  background: var(--gold);
+}
+.bar-inner.green {
+  background: var(--pine);
+}
+
+.pie-container {
+  margin-top: 2rem;
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.pie {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--pine) 0% 30%,
+    var(--iris) 30% 65%,
+    var(--foam) 65% 80%,
+    var(--gold) 80% 100%
+  );
+}
+
+/* Legends positioned on slices */
+.legend {
+  position: absolute;
+  color: var(--base);
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none; /* Ensures they're not clickable */
+}
+
+.legend3 {
+  top: 30px;
+  left: 40px;
+}
+.legend1 {
+  top: 50px;
+  left: 100px;
+}
+.legend4 {
+  top: 75px;
+  left: 20px;
+}
+
+.legend2 {
+  top: 110px;
+  left: 75px;
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
+  }
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+  }
+}
+@media print {
+  html,
+  body,
+  .container,
+  .content,
+  .sidebar,
+  section {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .container,
+  .content,
+  .sidebar {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide navigation, pie/bar graphs, contact info, and footer */
+  .nav,
+  .pie-container,
+  .bar-graph,
+  .contact,
+  footer {
+    display: none !important;
+  }
+
+  /* Hide unnecessary backgrounds in lists */
+  .skills li,
+  .certifications li,
+  .projects li,
+  .languages li {
+    background: none !important;
+    color: #222 !important;
+    border-radius: 0 !important;
+    display: list-item !important;
+    padding: 0 !important;
+    margin-bottom: 0.2em;
+    font-size: 1em !important;
+  }
+
+  /* Experience/Education blocks: add clear page breaks */
+  .experience,
+  .education {
+    background: none !important;
+    color: #111 !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: always;
+    padding-bottom: 0.5em !important;
+    margin-bottom: 1em !important;
+  }
+  .experience:last-child,
+  .education:last-child {
+    page-break-after: auto;
+  }
+
+  /* Section titles */
+  h2 {
+    border-bottom: 1px solid #888 !important;
+    color: #222 !important;
+    background: none !important;
+    padding-bottom: 0.3em !important;
+    margin-bottom: 0.7em !important;
+    font-size: 1.2em !important;
+  }
+
+  /* Profile image */
+  .profile-photo {
+    border: none !important;
+    margin-bottom: 0.5em !important;
+    background: none !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  /* Remove floating right from date */
+  .date {
+    float: none !important;
+    display: block !important;
+    color: #444 !important;
+    font-size: 0.95em !important;
+    margin-bottom: 0.3em !important;
+  }
+
+  /* Tighten up sections */
+  section {
+    margin-bottom: 1em !important;
+    padding: 0.5em 0 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Remove sticky/fixed positioning from sidebar */
+  .sidebar {
+    position: static !important;
+  }
+}
