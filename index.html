@@ -8,58 +8,94 @@
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
+    <aside class="sidebar column">
       <div class="profile">
         <img src="profile.jpeg" alt="Photo de profil" class="profile-photo">
         <h1>Ludovic Delaunay</h1>
         <h2>Senior Data Engineer <br/> Technical Lead</h2>
       </div>
-      <div class="pie-container">
-        <div class="pie"></div>
-        <div class="legend legend1">30%</div>
-        <div class="legend legend2">35%</div>
-        <div class="legend legend3">15%</div>
-        <div class="legend legend4">20%</div>
-      </div>
-        <ul class="skills">
-          <li class="gold">Management</li>
-          <li class="pine">Projet</li>
-          <li class="iris">Data</li>
-          <li class="foam">Web</li>
-        </ul>
-      <nav class="nav">
-      <h2>Compétences</h2>
-        <ul class="skills">
-          <li>Azure Synapse Analytics</li>
-          <li>SSAS </li>
-          <li>SSRS </li>
-          <li>Power BI</li>
-          <li>Big Data</li>
-          <li>Cloud,</li>
-          <li>IA</li>
-          <li>Architecture Data</li>
-          <li>.NET</li>
-          <li>C#</li>
-          <li>MVC</li>
-          <li>SQL Server</li>
-          <li>Oracle</li>
-          <li>Sybase IQ</li>
-          <li>Jira</li>
-          <li>Confluence</li>
-          <li>Agile</li>
-          <li>SCRUM</li>
-          <li>DevOps</li>
-        </ul>
-      </nav>
       <p class="contact">
           <a href="mailto:ludovic.delaunay@outlook.fr"></a>
           <a href="https://www.linkedin.com/in/ludovicdelaunay/" target="_blank"></a>
           <a href="https://github.com/otto-bus-dev" target="_blank"></a>
       </p>
+      <h2 class="print-only" >Profil</h2>
+      <div class="summary">
+        <div class="stats">
+          <div class="pie-container">
+            <div class="pie"></div>
+            <div class="legend legend1">30%</div>
+            <div class="legend legend2">35%</div>
+            <div class="legend legend3">15%</div>
+            <div class="legend legend4">20%</div>
+          </div>
+          <ul class="skills" style="text-align:center">
+            <li class="gold bold">Management</li>
+            <li class="pine bold">Projet</li>
+            <li class="iris bold">Data</li>
+            <li class="foam bold">Web</li>
+          </ul>
+        </div>
+        <div class="text" >
+          <div class="print-only">
+            <p>
+              Ingénieur Data expérimenté, spécialisé dans la modernisation des infrastructures analytiques, la gestion de projets BI, l’architecture Cloud (Azure), et le management d’équipes techniques. 
+              Plus de 15 ans d’expérience en conception, développement et pilotage de solutions Data dans des contextes exigeants (finance, médias, conseil).
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2>Compétences</h2>
+      <ul class="skills bold">
+            <li class='gold'>RH</li>
+            <li class='gold'>Finance</li>
+            <li class='gold'>Organisation</li>
+            <li class='gold'>Training</li>
+            
+            <li class='pine'>Agile</li>
+            <li class='pine'>SCRUM</li> 
+            <li class='pine'>Jira</li> 
+            <!-- <li class='pine'>Confluence</li>  -->
+            <!-- <li class='pine'>Teams</li> -->
+            <!-- <li class='pine'>Git</li> -->
+            <li class='pine'>Azure DevOps</li>
+            <!-- <li class='pine'>Jenkins</li> -->
+            <!-- <li class='pine'>Cycle en V</li> -->
+            <!-- <li class='pine'>Team Fundation Studio</li> -->
+            
+            <li class='iris'>Databricks</li>
+            <li class='iris'>Synapse</li>
+            <li class='iris'>Fabric</li>
+            <!-- <li class='iris'>Notebooks</li> -->
+            <li class='iris'>Python</li>
+            <li class='iris'>Power BI</li>
+            <!-- <li class='iris'>DAX</li> -->
+            <li class='iris'>SSAS</li>
+            <!-- <li class='iris'>SSIS</li> -->
+            <!-- <li class='iris'>SSRS</li> -->
+            <li class='iris'>SQL Server</li>
+            <!-- <li class='iris'>ODS</li> -->
+            <li class='iris'>C#</li>
+            <!-- <li class='iris'>Control M</li> -->
+            <!-- <li class='iris'>SAP BO</li> -->
+            <!-- <li class='iris'>What's On API</li> -->
+            <li class='iris'>Azure</li>
+                        
+            <li class='foam'>React</li>
+            <li class='foam'>JQuery</li>
+            <li class='foam'>Node</li>
+            <li class='foam'>C#</li>
+            <!-- <li class='foam'>VB.Net</li> -->
+            <!-- <li class='foam'>MVC</li> -->
+            <!-- <li class='foam'>EntityFramework</li> -->
+            <!-- <li class='foam'>Webforms</li> -->
+            <li class='foam'>SQL Server</li>
+      </ul>
+      
     </aside>
-    <main class="content">
-      <section id="summary">
-        <h2>Résumé Professionnel</h2>
+    <main class="content column">
+      <section id="summary" class="no-print">
+        <h2>Profil</h2>
         <p>
           Ingénieur Data expérimenté, spécialisé dans la modernisation des infrastructures analytiques, la gestion de projets BI, l’architecture Cloud (Azure), et le management d’équipes techniques. 
           Plus de 15 ans d’expérience en conception, développement et pilotage de solutions Data dans des contextes exigeants (finance, médias, conseil).
@@ -80,17 +116,17 @@
               <li>Amélioration de l’agilité et de la puissance analytique via Azure.</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main green" style="width: 29%">
-                <span>Projects (30%)</span>
-              </div>
-              <div class="bar-inner main iris" style="width: 69%">
-                <span>Data (70%)</span>
-              </div>
-            </div>
-          </div>
-         <ul class="skills">
+          <table class='bar-graph'>
+            <tr>
+              <td class="pine" style='width:30%'>
+                Projects (30%)
+              </td>
+              <td class="iris" style='width:70%'>
+                Data (70%)
+              </td>
+            </tr>
+          </table>
+          <ul class="skills">
             <li class='pine'>Agile</li>
             <li class='pine'>SCRUM</li> 
             <li class='pine'>Azure Devops</li> 
@@ -102,6 +138,7 @@
             <li class='iris'>Python</li>
             <li class='iris'>SQL</li>
             <li class='iris'>SSAS</li>
+            <li class='iris'>Azure</li>
           </ul>
         </div>
         <div class="experience">
@@ -117,17 +154,21 @@
               <li>Développement de partenariats technologiques.</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main red" style="width: 99%">
-                <span>Management (100%)</span>
-              </div>
-            </div>
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="gold" style='width:80%'>
+                Management (80%)
+              </td>
+              <td class="iris" style='width:20'>
+                Data (20%)
+              </td>
+            </tr>
+          </table>
           <ul class="skills">
             <li class='gold'>RH</li>
             <li class='gold'>Finance</li>
             <li class='gold'>Sales</li> 
+            <li class='iris'>Fabric</li>
           </ul>
         </div>
         <div class="experience">
@@ -154,23 +195,24 @@
               <li>Mise en place des méthodes Agile (Azure DevOps)</li>
             </ul>
           </p>
-          <div class="bar-graph">
 
-            <div class="bar">
-              <div class="bar-inner main red" style="width: 9%">
-                <span>Management (10%)</span>
-              </div>
-              <div class="bar-inner main green" style="width: 24%">
-                <span>Projects (25%)</span>
-              </div>
-              <div class="bar-inner main iris" style="width: 64%">
-                <span>Data (65%)</span>
-              </div>
-            </div>
-
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="gold" style='width:10%'>
+                Management (10%)
+              </td>
+              <td class="pine" style='width:25%'>
+                Projects (25%)
+              </td>
+              <td class="iris" style='width:65%'>
+                Data (65%)
+              </td>
+            </tr>
+          </table>   
 
           <ul class="skills">
+            <li class='gold'>Organisation</li>
+            <li class='gold'>Recrutement</li>
             <li class='pine'>Agile</li>
             <li class='pine'>SCRUM</li> 
             <li class='pine'>Git</li> 
@@ -186,6 +228,7 @@
             <li class='iris'>Semantic Model</li>
             <li class='iris'>Reports</li>
             <li class='iris'>DAX</li>
+            <li class='iris'>Azure</li>
           </ul>
 
         </div>
@@ -233,19 +276,19 @@
               <li>Création d’indicateurs de suivi projet (Power BI branché sur API Jira)</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main green" style="width: 39%">
-                <span>Projects (40%)</span>
-              </div>
-              <div class="bar-inner main iris" style="width: 49%">
-                <span>Data (50%)</span>
-              </div>
-              <div class="bar-inner main blue" style="width: 9%">
-                <span>Web (10%)</span>
-              </div>
-            </div>
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="pine" style='width:40%'>
+                Projects (40%)
+              </td>
+              <td class="iris" style='width:50%'>
+                Data (50%)
+              </td>
+              <td class="foam" style='width:10%'>
+                Web (10%)
+              </td>
+            </tr>
+          </table>
           <ul class="skills">
             <li class='pine'>Agile</li>
             <li class='pine'>SCRUM</li> 
@@ -290,23 +333,25 @@
             <li>Mise en place CI/CD  (TFS / XLDeploy)</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main red" style="width: 9%">
-                <span>Management (10%)</span>
-              </div>
-              <div class="bar-inner main green" style="width: 29%">
-                <span>Projects (30%)</span>
-              </div>
-              <div class="bar-inner main iris" style="width: 49%">
-                <span>Data (50%)</span>
-              </div>
-              <div class="bar-inner main blue" style="width: 9%">
-                <span>Web (20%)</span>
-              </div>
-            </div>
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="gold" style='width:10%'>
+                Management (10%)
+              </td>
+              <td class="pine" style='width:30%'>
+                Projects (30%)
+              </td>
+              <td class="iris" style='width:50%'>
+                Data (50%)
+              </td>
+              <td class="foam" style='width:10%'>
+                Web (10%)
+              </td>
+            </tr>
+          </table>
           <ul class="skills">
+            <li class='gold'>Organisation</li>
+            <li class='gold'>Training</li>
             <li class='pine'>Agile</li>
             <li class='pine'>SCRUM</li> 
             <li class='pine'>Azure DevOps</li> 
@@ -367,23 +412,26 @@
               <li>Mise en place CI/CD  (TFS )</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main red" style="width: 29%">
-                <span>Management (30%)</span>
-              </div>
-              <div class="bar-inner main green" style="width: 19%">
-                <span>Projects (20%)</span>
-              </div>
-              <div class="bar-inner main iris" style="width: 14%">
-                <span>Data (15%)</span>
-              </div>
-              <div class="bar-inner main blue" style="width: 34%">
-                <span>Web (35%)</span>
-              </div>
-            </div>
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="gold" style='width:30%'>
+                Management (30%)
+              </td>
+              <td class="pine" style='width:20%'>
+                Projects (20%)
+              </td>
+              <td class="iris" style='width:15%'>
+                Data (15%)
+              </td>
+              <td class="foam" style='width:35%'>
+                Web (35%)
+              </td>
+            </tr>
+          </table>
           <ul class="skills">
+            <li class='gold'>Organisation</li>
+            <li class='gold'>Recrutement</li>
+            <li class='gold'>Budget</li>
             <li class='pine'>Cycle en V</li>
             <li class='pine'>Team Fundation Studio</li>
             <li class='iris'>SQL</li>
@@ -411,16 +459,16 @@
               <li>Ubifrance : Module gestion demandes clients (CRM interne SICOM).</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main green" style="width: 19%">
-                <span>Projects (20%)</span>
-              </div>
-              <div class="bar-inner main blue" style="width: 79%">
-                <span>Web (80%)</span>
-              </div>
-            </div>
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="pine" style='width:20%'>
+                Projects (20%)
+              </td>
+              <td class="foam" style='width:80%'>
+                Web (80%)
+              </td>
+            </tr>
+          </table>
           <ul class="skills">
             <li class='pine'>Cycle en V</li>
             <li class='pine'>Team Fundation Studio</li>
@@ -446,16 +494,16 @@
               <li>Maintenance</li>
             </ul>
           </p>
-          <div class="bar-graph">
-            <div class="bar">
-              <div class="bar-inner main green" style="width: 19%">
-                <span>Projects (20%)</span>
-              </div>
-              <div class="bar-inner main blue" style="width: 79%">
-                <span>Web (80%)</span>
-              </div>
-            </div>
-          </div>
+          <table class='bar-graph'>
+            <tr>
+              <td class="pine" style='width:20%'>
+                Projects (20%)
+              </td>
+              <td class="foam" style='width:80%'>
+                Web (80%)
+              </td>
+            </tr>
+          </table>
           <ul class="skills">
             <li class='pine'>Cycle en V</li>
             <li class='pine'>Team Fundation Studio</li>
@@ -483,31 +531,7 @@
           </p>
         </div>
       </section>
-      <section id="skills">
-      <h2>Compétences</h2>
-        <ul class="skills">
-          <li>Azure Synapse Analytics</li>
-          <li>SSAS </li>
-          <li>SSRS </li>
-          <li>Power BI</li>
-          <li>Big Data</li>
-          <li>Cloud,</li>
-          <li>IA</li>
-          <li>Architecture Data</li>
-          <li>.NET</li>
-          <li>C#</li>
-          <li>MVC</li>
-          <li>SQL Server</li>
-          <li>Oracle</li>
-          <li>Sybase IQ</li>
-          <li>Jira</li>
-          <li>Confluence</li>
-          <li>Agile</li>
-          <li>SCRUM</li>
-          <li>DevOps</li>
-        </ul>
-      </section>
-      <section id="certifications">
+            <section id="certifications">
         <h2>Certifications</h2>
         <ul class="certifications">
           <li>

@@ -24,8 +24,13 @@ body {
 .container {
   display: flex;
   height: 100vh;
+  margin: 0 auto;
+  gap: 24px;
 }
-
+.column {
+  flex: 1;
+  padding: 16px;
+}
 .sidebar {
   width: 320px;
   background: var(--surface);
@@ -48,6 +53,10 @@ body {
   /* So the margin doesn't make sidebar overflow */
 }
 
+.sidebar .skills {
+  font-size: 10px;
+  /* So the margin doesn't make sidebar overflow */
+}
 .profile {
   display: flex;
   flex-direction: column;
@@ -75,16 +84,18 @@ body {
 }
 
 .profile h2 {
-  margin: 0.5rem 0 1rem 0;
+  /* margin: 0.5rem 0 1rem 0; */
   font-size: 1.15rem;
   font-weight: normal;
   color: var(--rose);
+  /* width: inherit; */
   text-align: center;
 }
 
+.sidebar > h2 {
+  width: 100%;
+}
 .contact {
-  position: absolute;
-  bottom: 0;
   text-align: center;
   vertical-align: bottom;
   width: 100%;
@@ -137,13 +148,30 @@ body {
   color: var(--highlight);
   background: var(--overlay);
 }
+/* Scrollbar track */
+::-webkit-scrollbar {
+  width: 12px; /* width of scrollbar */
+  background: var(--surface); /* color of track */
+}
 
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: var(--overlay); /* color of thumb */
+  border-radius: 6px; /* rounded edges */
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--subtle); /* color on hover */
+}
 .content {
   margin-left: 344px; /* sidebar width + left margin */
+  /* margin-right: 144px; */
+  width: 600px;
   padding: 2rem 2rem;
   width: 100%;
   overflow-y: auto;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
   background: var(--base);
 }
@@ -205,6 +233,7 @@ h2 {
 .languages {
   list-style: none;
   padding-left: 0;
+  text-align: justify;
 }
 
 .skills li,
@@ -256,72 +285,38 @@ footer {
   font-size: 0.95rem;
   border-radius: 0 0 8px 8px;
 }
-.bar-graph {
-  margin-top: 2rem;
-  display: inline-block;
+table.bar-graph {
   width: 100%;
+  display: table;
+  text-align: center;
+  border-spacing: 5px;
 }
 
-.bar {
-  margin-bottom: 16px;
-}
-
-.bar-graph .category {
-  color: var(--gold);
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.bar-inner span {
-  display: inline-block;
+table.bar-graph td {
   color: var(--base);
+  border-radius: 3px;
   font-weight: bold;
 }
-
-.bar-inner div {
-  /* display: none; */
-  background: var(--base);
-  color: white;
-  padding: 0.5rem;
-  border-top: var(--base) solid 1px;
-  border-radius: 0px 0 3px 3px;
+table.bar-graph .pine {
+  background-color: var(--pine) !important;
 }
 
-.bar-inner.main {
-  border-radius: 3px;
-  width: 300px;
-  display: inline-block;
-  height: 18px;
-  /* margin-left: 1px; */
-  vertical-align: middle;
-  text-align: center;
-}
-.bar-inner {
-  /* display: none; */
-  border-radius: 3px;
-  width: 300px;
-  display: inline-block;
-  height: 40px;
-  /* margin-left: 1px; */
-  vertical-align: middle;
-  text-align: center;
+table.bar-graph .iris {
+  background-color: var(--iris) !important;
 }
 
-.bar-inner.blue {
-  background: var(--foam);
+table.bar-graph .gold {
+  background-color: var(--gold) !important;
 }
-
-.bar-inner.iris {
-  background: var(--iris);
-}
-.bar-inner.red {
-  background: var(--gold);
-}
-.bar-inner.green {
-  background: var(--pine);
+table.bar-graph .foam {
+  background-color: var(--foam) !important;
 }
 
 .pie-container {
+  text-align: center;
   margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   width: 150px;
   height: 150px;
@@ -336,36 +331,38 @@ footer {
     var(--iris) 30% 65%,
     var(--foam) 65% 80%,
     var(--gold) 80% 100%
-  );
+  ) !important;
 }
-
-/* Legends positioned on slices */
 .legend {
   position: absolute;
   color: var(--base);
   font-size: 14px;
-  font-weight: bold;
+  /* font-weight: bold !important; */
   pointer-events: none; /* Ensures they're not clickable */
 }
-
+.bold {
+  font-weight: bold;
+}
 .legend3 {
-  top: 30px;
-  left: 40px;
+  top: 23px;
+  left: 25px;
 }
 .legend1 {
-  top: 50px;
-  left: 100px;
+  top: 30px;
+  left: 107px;
 }
 .legend4 {
   top: 75px;
-  left: 20px;
+  left: 5px;
 }
-
 .legend2 {
-  top: 110px;
-  left: 75px;
+  top: 125px;
+  left: 70px;
 }
-@media (max-width: 900px) {
+.print-only {
+  display: none;
+}
+@media (max-width: 1000px) {
   .container {
     flex-direction: column;
     height: auto;
@@ -384,7 +381,37 @@ footer {
     width: 100%;
     height: auto;
   }
+  .summary {
+    display: table-row;
+  }
+  .summary > div {
+    display: table-cell;
+
+    vertical-align: top;
+  }
+  .summary > div.stats {
+    width: 300px;
+  }
+
+  .summary > div.text {
+    width: 400px;
+    vertical-align: middle;
+    line-height: 1.8rem;
+    text-align: justify;
+    padding-left: 2rem;
+  }
+  #skills {
+    width: 700px;
+  }
+  .print-only {
+    display: inherit;
+  }
+
+  .no-print {
+    display: none;
+  }
 }
+
 @media print {
   html,
   body,
@@ -392,10 +419,13 @@ footer {
   .content,
   .sidebar,
   section {
-    background: #fff !important;
-    color: #000 !important;
+    /* background: #fff !important; */
+    color: var(--base) !important;
     box-shadow: none !important;
     border: none !important;
+  }
+  .print-only {
+    height: auto;
   }
 
   .container,
@@ -411,21 +441,21 @@ footer {
   }
 
   /* Hide navigation, pie/bar graphs, contact info, and footer */
-  .nav,
-  .pie-container,
-  .bar-graph,
+  /* .nav, */
+  /* .pie-container, */
+  /* .bar-graph, */
   .contact,
   footer {
     display: none !important;
   }
 
   /* Hide unnecessary backgrounds in lists */
-  .skills li,
+  /* .skills li, */
   .certifications li,
   .projects li,
   .languages li {
     background: none !important;
-    color: #222 !important;
+    color: var(--base) !important;
     border-radius: 0 !important;
     display: list-item !important;
     padding: 0 !important;
@@ -434,26 +464,32 @@ footer {
   }
 
   /* Experience/Education blocks: add clear page breaks */
+
   .experience,
   .education {
-    background: none !important;
-    color: #111 !important;
+    /* background: none !important; */
+    color: var(--base) !important;
     border: none !important;
     box-shadow: none !important;
-    page-break-after: always;
     padding-bottom: 0.5em !important;
-    margin-bottom: 1em !important;
+    margin-bottom: 2em !important;
   }
-  .experience:last-child,
-  .education:last-child {
+  .experience {
     page-break-after: auto;
+
+    /* border-bottom: var(--base) solid 1px; */
+    border-bottom: 1px solid #888 !important;
+  }
+  .experience:last-child {
+    page-break-after: auto;
+    border-bottom: none;
   }
 
   /* Section titles */
   h2 {
-    border-bottom: 1px solid #888 !important;
-    color: #222 !important;
-    background: none !important;
+    border-bottom: 1px solid var(--base) !important;
+    color: var(--gold) !important;
+    /* background: none !important; */
     padding-bottom: 0.3em !important;
     margin-bottom: 0.7em !important;
     font-size: 1.2em !important;
@@ -463,6 +499,7 @@ footer {
   .profile-photo {
     border: none !important;
     margin-bottom: 0.5em !important;
+    margin-top: 2em;
     background: none !important;
     width: 80px !important;
     height: 80px !important;
@@ -472,7 +509,7 @@ footer {
   .date {
     float: none !important;
     display: block !important;
-    color: #444 !important;
+    color: var(--surface) !important;
     font-size: 0.95em !important;
     margin-bottom: 0.3em !important;
   }
@@ -482,7 +519,7 @@ footer {
     margin-bottom: 1em !important;
     padding: 0.5em 0 !important;
     border-radius: 0 !important;
-    background: none !important;
+    /* background: none !important; */
     box-shadow: none !important;
     page-break-inside: avoid !important;
   }
@@ -490,5 +527,45 @@ footer {
   /* Remove sticky/fixed positioning from sidebar */
   .sidebar {
     position: static !important;
+  }
+  .sidebar h2 {
+    margin-top: 3em !important;
+    /* margin-bottom: 3em !important; */
+  }
+  .skills li {
+    display: inline-block !important;
+  }
+  .no-print {
+    display: none;
+  }
+
+  table.bar-graph td,
+  .pie {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  .skills li.foam {
+    color: var(--foam);
+    border: 1px solid var(--foam);
+    border-radius: 3px;
+  }
+  .skills li.gold {
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+  }
+  .skills li.iris {
+    color: var(--iris);
+    border: 1px solid var(--iris);
+    border-radius: 3px;
+  }
+  .skills li.pine {
+    color: var(--pine);
+    border: 1px solid var(--pine);
+    border-radius: 3px;
+  }
+
+  .summary .skills li {
+    border: none;
   }
 }
