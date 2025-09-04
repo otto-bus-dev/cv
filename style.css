@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "JetBrains Mono Nerd Font";
+  src: url("fonts/JetBrainsMonoNerdFontMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --base: #191724;
   --surface: #1f1d2e;
@@ -16,7 +23,7 @@
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "JetBrains Mono Nerd Font", monospace !important ;
   background: var(--base);
   color: var(--text);
 }
@@ -362,6 +369,29 @@ table.bar-graph .foam {
 .print-only {
   display: none;
 }
+
+.l {
+  display: inherit;
+}
+.print-button {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  background-color: var(--foam);
+  color: var(--pine);
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 50%;
+}
+
+.print-button:hover {
+  background-color: var(--pine);
+  color: var(--text);
+}
+
 @media (max-width: 1000px) {
   .container {
     flex-direction: column;
@@ -403,13 +433,65 @@ table.bar-graph .foam {
   #skills {
     width: 700px;
   }
-  .print-only {
-    display: inherit;
-  }
-
-  .no-print {
+  .l {
     display: none;
   }
+  .m {
+    display: inherit;
+  }
+  /* .print-only { */
+  /*   display: inherit; */
+  /* } */
+  /**/
+  /* .no-print { */
+  /*   display: none; */
+  /* } */
+}
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
+  }
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+  }
+  .summary {
+    display: table;
+  }
+  .summary > div {
+    display: table-row;
+
+    vertical-align: top;
+  }
+  .summary > div.stats {
+    width: 300px;
+  }
+
+  .summary > div.text {
+    width: 400px;
+    vertical-align: middle;
+    line-height: 1.8rem;
+    text-align: justify;
+    padding-left: 2rem;
+  }
+  #skills {
+    width: 700px;
+  }
+  /**/
+  /* .no-print { */
+  /*   display: none; */
+  /* } */
 }
 
 @media print {
@@ -425,7 +507,7 @@ table.bar-graph .foam {
     border: none !important;
   }
   .print-only {
-    height: auto;
+    display: inherit;
   }
 
   .container,
@@ -439,13 +521,15 @@ table.bar-graph .foam {
     height: auto !important;
     border-radius: 0 !important;
   }
+  .contact span {
+    font-size: 12px;
+  }
 
   /* Hide navigation, pie/bar graphs, contact info, and footer */
   /* .nav, */
   /* .pie-container, */
   /* .bar-graph, */
-  .contact,
-  footer {
+  .contact {
     display: none !important;
   }
 
@@ -567,5 +651,11 @@ table.bar-graph .foam {
 
   .summary .skills li {
     border: none;
+  }
+  .contact-print span {
+    color: var(--pine);
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1rem;
   }
 }
