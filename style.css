@@ -1,3 +1,98 @@
+/* CSS Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "JetBrains Mono Nerd Font";
   src: url("fonts/JetBrainsMonoNerdFontMono-Regular.ttf") format("truetype");
@@ -26,6 +121,41 @@ body {
   font-family: "JetBrains Mono Nerd Font", monospace !important ;
   background: var(--base);
   color: var(--text);
+  text-align: justify;
+}
+
+section {
+  margin-bottom: 2rem;
+  background: var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
+  padding: 1.5rem 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+  margin: 0.5rem 0;
+  color: var(--rose);
+}
+section > h2 {
+  margin-top: 0;
+}
+section p {
+  margin: 1rem 0 0.2rem 0;
+}
+section ul {
+  padding-left: 2rem;
+  margin: 0.5rem 0;
+}
+.large {
+  display: inherit;
+}
+
+.print-only {
+  display: none;
 }
 
 .container {
@@ -42,14 +172,10 @@ body {
   width: 320px;
   background: var(--surface);
   color: var(--text);
-  /* Add margin and rounded border */
   margin: 2rem 0 2rem 24px;
   border-radius: 8px;
   box-shadow: 0 6px 32px rgba(44, 62, 80, 0.12);
-  /* border: 2px solid var(--overlay); */
-
   padding: 2rem 1rem;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,13 +183,12 @@ body {
   top: 0;
   left: 0;
   height: calc(100vh - 48px);
-  /* So the margin doesn't make sidebar overflow */
 }
 
-.sidebar .skills {
-  font-size: 10px;
-  /* So the margin doesn't make sidebar overflow */
+.sidebar > h2 {
+  width: 100%;
 }
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -72,15 +197,14 @@ body {
 }
 
 .profile-photo {
-  width: 110px;
-  height: 110px;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--rose);
   margin-bottom: 1.2rem;
   background: var(--base);
   display: block;
-  /* Centered by flex already */
 }
 
 .profile h1 {
@@ -91,22 +215,20 @@ body {
 }
 
 .profile h2 {
-  /* margin: 0.5rem 0 1rem 0; */
   font-size: 1.15rem;
   font-weight: normal;
   color: var(--rose);
-  /* width: inherit; */
   text-align: center;
 }
 
-.sidebar > h2 {
-  width: 100%;
+.sidebar .skills {
+  font-size: 0.8rem;
 }
+
 .contact {
   text-align: center;
   vertical-align: bottom;
-  width: 100%;
-  margin-bottom: 1rem;
+  width: 20rem;
 }
 
 .contact a {
@@ -121,40 +243,60 @@ body {
 .contact a:hover {
   color: var(--highlight);
 }
+.stats {
+  margin-bottom: 1rem;
+}
+.pie-container {
+  text-align: center;
+  margin: 1.5rem auto;
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
 
-.nav {
-  margin-top: 2rem;
+.pie {
   width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--pine) 0% 30%,
+    var(--iris) 30% 65%,
+    var(--foam) 65% 80%,
+    var(--gold) 80% 100%
+  ) !important;
+}
+.legend {
+  position: absolute;
+  color: var(--base);
+  font-size: 14px;
+  /* font-weight: bold !important; */
+  pointer-events: none; /* Ensures they're not clickable */
 }
 
-.nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.legend3 {
+  top: 23px;
+  left: 25px;
+}
+.legend1 {
+  top: 30px;
+  left: 107px;
+}
+.legend4 {
+  top: 75px;
+  left: 5px;
+}
+.legend2 {
+  top: 125px;
+  left: 70px;
+}
+.stats .skills {
+  font-weight: bold;
 }
 
-.nav li {
-  margin-bottom: 1.2rem;
-  text-align: left;
+.sidebar > .skills > ul {
+  margin: 1rem 0;
 }
 
-.nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 1.08rem;
-  transition:
-    color 0.2s,
-    background 0.2s;
-  padding: 0.3em 0.7em;
-  border-radius: 4px;
-  display: block;
-}
-
-.nav a:hover,
-.nav a:focus {
-  color: var(--highlight);
-  background: var(--overlay);
-}
 /* Scrollbar track */
 ::-webkit-scrollbar {
   width: 12px; /* width of scrollbar */
@@ -173,43 +315,32 @@ body {
 }
 .content {
   margin-left: 344px; /* sidebar width + left margin */
-  /* margin-right: 144px; */
-  width: 600px;
   padding: 2rem 2rem;
   width: 100%;
-  overflow-y: auto;
   height: 100%;
-  box-sizing: border-box;
+  overflow-y: auto;
   background: var(--base);
 }
 
-section {
-  margin-bottom: 2rem;
-  background: var(--surface);
-  border-radius: 8px;
-  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
-  padding: 1.5rem 1rem;
-}
-
-h2 {
-  border-bottom: 2px solid var(--gold);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  color: var(--rose);
+#summary p {
+  margin: 1rem 0 0 0;
+  font-size: 1.2rem;
 }
 
 .experience:last-child,
 .education:last-child {
   padding-bottom: 1rem;
-  margin-bottom: O;
+  margin-bottom: 0;
   border-bottom: none;
 }
 
-.experience,
-.education {
-  padding-bottom: 4rem;
-  margin-bottom: 1.5rem;
+.experience {
   border-bottom: 1px solid var(--overlay);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.education {
+  margin-bottom: 1.5rem;
 }
 
 .experience h3,
@@ -228,6 +359,7 @@ h2 {
 }
 
 .date {
+  margin: 0.2rem 0;
   display: inline-block;
   font-size: 0.95rem;
   color: var(--muted);
@@ -282,27 +414,19 @@ h2 {
   color: var(--gold);
 }
 
-footer {
-  text-align: center;
-  background: var(--surface);
-  color: var(--muted);
-  padding: 1rem 0;
-  margin-top: 2rem;
-  border-top: 3px solid var(--highlight);
-  font-size: 0.95rem;
-  border-radius: 0 0 8px 8px;
-}
 table.bar-graph {
   width: 100%;
   display: table;
   text-align: center;
   border-spacing: 5px;
+  margin: 1rem 0;
 }
 
 table.bar-graph td {
   color: var(--base);
   border-radius: 3px;
   font-weight: bold;
+  white-space: nowrap;
 }
 table.bar-graph .pine {
   background-color: var(--pine) !important;
@@ -319,60 +443,6 @@ table.bar-graph .foam {
   background-color: var(--foam) !important;
 }
 
-.pie-container {
-  text-align: center;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-
-.pie {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(
-    var(--pine) 0% 30%,
-    var(--iris) 30% 65%,
-    var(--foam) 65% 80%,
-    var(--gold) 80% 100%
-  ) !important;
-}
-.legend {
-  position: absolute;
-  color: var(--base);
-  font-size: 14px;
-  /* font-weight: bold !important; */
-  pointer-events: none; /* Ensures they're not clickable */
-}
-.bold {
-  font-weight: bold;
-}
-.legend3 {
-  top: 23px;
-  left: 25px;
-}
-.legend1 {
-  top: 30px;
-  left: 107px;
-}
-.legend4 {
-  top: 75px;
-  left: 5px;
-}
-.legend2 {
-  top: 125px;
-  left: 70px;
-}
-.print-only {
-  display: none;
-}
-
-.l {
-  display: inherit;
-}
 .print-button {
   position: fixed;
   right: 30px;
@@ -413,6 +483,8 @@ table.bar-graph .foam {
   }
   .summary {
     display: table-row;
+    width: 650px;
+    margin-top: 2rem;
   }
   .summary > div {
     display: table-cell;
@@ -420,32 +492,41 @@ table.bar-graph .foam {
     vertical-align: top;
   }
   .summary > div.stats {
-    width: 300px;
+    /* width: 300px; */
   }
 
   .summary > div.text {
-    width: 400px;
+    /* width: 400px; */
     vertical-align: middle;
     line-height: 1.8rem;
     text-align: justify;
     padding-left: 2rem;
   }
-  #skills {
-    width: 700px;
+
+  .sidebar > .skills {
+    width: 650px;
+    margin-top: 2rem;
   }
-  .l {
+
+  .large {
     display: none;
   }
   .m {
     display: inherit;
   }
-  /* .print-only { */
-  /*   display: inherit; */
-  /* } */
-  /**/
-  /* .no-print { */
-  /*   display: none; */
-  /* } */
+
+  .profile-photo {
+    border: 3px solid var(--rose) !important;
+    margin-bottom: 0.5em !important;
+    margin-top: 2em;
+    background: none !important;
+    width: 7.5rem !important;
+    height: 7.5rem !important;
+  }
+
+  .pie-container {
+    margin-top: 0;
+  }
 }
 @media (max-width: 700px) {
   .container {
@@ -460,6 +541,7 @@ table.bar-graph .foam {
     border-radius: 8px 8px 0 0;
     box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
   }
+
   .content {
     margin-left: 0;
     padding: 1rem;
@@ -468,6 +550,7 @@ table.bar-graph .foam {
   }
   .summary {
     display: table;
+    width: 100%;
   }
   .summary > div {
     display: table-row;
@@ -479,19 +562,33 @@ table.bar-graph .foam {
   }
 
   .summary > div.text {
-    width: 400px;
+    /* width: 400px; */
     vertical-align: middle;
     line-height: 1.8rem;
     text-align: justify;
     padding-left: 2rem;
   }
-  #skills {
-    width: 700px;
+
+  .summary > div.text p {
+    margin-top: 2rem;
   }
-  /**/
-  /* .no-print { */
-  /*   display: none; */
-  /* } */
+  .sidebar > .skills {
+    width: 100%;
+  }
+
+  /* Profile image */
+  .profile-photo {
+    border: 3px solid var(--rose) !important;
+    margin-bottom: 0.5em !important;
+    margin-top: 2em;
+    background: none !important;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .pie-container {
+    margin-top: 0;
+  }
 }
 
 @media print {
@@ -522,7 +619,7 @@ table.bar-graph .foam {
     border-radius: 0 !important;
   }
   .contact span {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
 
   /* Hide navigation, pie/bar graphs, contact info, and footer */
@@ -532,7 +629,9 @@ table.bar-graph .foam {
   .contact {
     display: none !important;
   }
-
+  .sidebar > .skills {
+    width: 100%;
+  }
   /* Hide unnecessary backgrounds in lists */
   /* .skills li, */
   .certifications li,
@@ -585,8 +684,8 @@ table.bar-graph .foam {
     margin-bottom: 0.5em !important;
     margin-top: 2em;
     background: none !important;
-    width: 80px !important;
-    height: 80px !important;
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   /* Remove floating right from date */
@@ -654,7 +753,7 @@ table.bar-graph .foam {
   }
   .contact-print span {
     color: var(--pine);
-    font-size: 14px;
+    font-size: 0.9rem;
     text-decoration: none;
     line-height: 1rem;
   }
