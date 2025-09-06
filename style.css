@@ -446,6 +446,21 @@ table.bar-graph .foam {
   background-color: var(--foam) !important;
 }
 
+.hobbies span {
+  color: var(--rose);
+  font-size: 2rem;
+}
+
+.youtube {
+  color: var(--foam);
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.youtube:hover {
+  color: var(--red);
+}
+
 .print-button {
   position: fixed;
   right: 30px;
@@ -759,11 +774,11 @@ table.bar-graph .foam {
     page-break-after: auto;
 
     /* border-bottom: var(--base) solid 1px; */
-    border-bottom: 1px solid #888 !important;
+    border-bottom: 1px solid var(--base) !important;
   }
   .experience:last-child {
-    page-break-after: auto;
-    border-bottom: none;
+    page-break-after: always;
+    border-bottom: none !important;
   }
 
   /* Section titles */
@@ -816,6 +831,8 @@ table.bar-graph .foam {
   .skills li {
     display: inline-block !important;
   }
+  .youtube,
+  #hobbies,
   .no-print {
     display: none;
   }
@@ -854,5 +871,9 @@ table.bar-graph .foam {
     font-size: 0.9rem;
     text-decoration: none;
     line-height: 1rem;
+  }
+
+  .pie-container {
+    margin-top: 1rem;
   }
 }
