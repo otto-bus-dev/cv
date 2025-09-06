@@ -102,7 +102,7 @@ video {
 
 :root {
   --base: #191724;
-  --surface: #1f1d2e;
+  --surface: #1f1d2ef4;
   --overlay: #26233a;
   --highlight: #eb6f92;
   --love: #eb6f92;
@@ -118,10 +118,27 @@ video {
 html {
   font-size: 14px;
 }
+/* body::before { */
+/*   content: ""; */
+/*   position: fixed; */
+/*   top: 0; */
+/*   left: 0; */
+/*   width: 100vw; */
+/*   height: 100vh; */
+/*   z-index: -1; */
+/*   background: url("rose_pine_maze.png") center center / cover no-repeat; */
+/*   pointer-events: none; */
+/* } */
+
 body {
   margin: 0;
   font-family: "JetBrains Mono Nerd Font", monospace !important ;
-  background: var(--base);
+  /* background: var(--base); */
+  background-image: url("rose_pine_maze.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: var(--text);
   text-align: justify;
   font-size: 14px;
@@ -133,6 +150,9 @@ section {
   border-radius: 8px;
   box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
   padding: 1.5rem 1rem;
+}
+section:last-of-type {
+  margin-bottom: 0;
 }
 
 h2 {
@@ -166,6 +186,7 @@ section ul {
   height: 100vh;
   margin: 0 auto;
   gap: 24px;
+  background-color: #191724dd;
 }
 .column {
   flex: 1;
@@ -185,7 +206,7 @@ section ul {
   position: fixed;
   top: 0;
   left: 0;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 4rem);
 }
 
 .sidebar > h2 {
@@ -270,9 +291,7 @@ section ul {
 }
 .legend {
   position: absolute;
-  color: var(--base);
   font-size: 14px;
-  /* font-weight: bold !important; */
   pointer-events: none; /* Ensures they're not clickable */
 }
 
@@ -322,7 +341,6 @@ section ul {
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  background: var(--base);
 }
 
 #summary p {
@@ -429,7 +447,12 @@ table.bar-graph td {
   color: var(--base);
   border-radius: 3px;
   font-weight: bold;
-  white-space: nowrap;
+  font-size: 0.9rem;
+}
+table.bar-graph td span {
+  display: block;
+  font-weight: normal;
+  font-size: 0.8rem;
 }
 table.bar-graph .pine {
   background-color: var(--pine) !important;
@@ -455,10 +478,13 @@ table.bar-graph .foam {
   color: var(--foam);
   text-decoration: none;
   font-size: 2rem;
+  line-height: 1.2rem;
+  vertical-align: bottom;
+  margin-left: 0.5rem;
 }
 
 .youtube:hover {
-  color: var(--red);
+  color: var(--highlight);
 }
 
 .print-button {
@@ -658,7 +684,7 @@ table.bar-graph .foam {
   }
   .legend {
     position: absolute;
-    color: var(--base);
+    /* color: var(--base); */
     font-size: 14px;
     /* font-weight: bold !important; */
     pointer-events: none; /* Ensures they're not clickable */
@@ -763,7 +789,6 @@ table.bar-graph .foam {
 
   .experience,
   .education {
-    /* background: none !important; */
     color: var(--base) !important;
     border: none !important;
     box-shadow: none !important;
@@ -773,7 +798,6 @@ table.bar-graph .foam {
   .experience {
     page-break-after: auto;
 
-    /* border-bottom: var(--base) solid 1px; */
     border-bottom: 1px solid var(--base) !important;
   }
   .experience:last-child {
@@ -785,7 +809,6 @@ table.bar-graph .foam {
   h2 {
     border-bottom: 1px solid var(--base) !important;
     color: var(--gold) !important;
-    /* background: none !important; */
     padding-bottom: 0.3em !important;
     margin-bottom: 0.7em !important;
     font-size: 1.2em !important;
@@ -815,7 +838,6 @@ table.bar-graph .foam {
     margin-bottom: 1em !important;
     padding: 0.5em 0 !important;
     border-radius: 0 !important;
-    /* background: none !important; */
     box-shadow: none !important;
     page-break-inside: avoid !important;
   }
@@ -826,7 +848,6 @@ table.bar-graph .foam {
   }
   .sidebar h2 {
     margin-top: 3em !important;
-    /* margin-bottom: 3em !important; */
   }
   .skills li {
     display: inline-block !important;
