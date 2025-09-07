@@ -518,13 +518,6 @@ table.bar-graph .foam {
 }
 
 @media (max-width: 1000px) {
-  .fixed-bg {
-    background: url("rose_pine_maze_1000_2234.png") center center / cover
-      no-repeat;
-  }
-  /* body { */
-  /*   background-image: url("rose_pine_maze_1000_2000.png"); */
-  /* } */
   .container {
     flex-direction: column;
     height: auto;
@@ -591,13 +584,6 @@ table.bar-graph .foam {
   }
 }
 @media (max-width: 700px) {
-  .fixed-bg {
-    background: url("rose_pine_maze_700_2234.png") center center / cover
-      no-repeat;
-  }
-  /* body { */
-  /*   background-image: url("rose_pine_maze_700_2234.png"); */
-  /* } */
   .container {
     flex-direction: column;
     height: auto;
@@ -755,6 +741,52 @@ table.bar-graph .foam {
   }
 }
 
+/* Ultra-wide/4K screens */
+@media (min-width: 2560px) {
+  .fixed-bg {
+    background: url("rose_pine_maze.png") center center / cover no-repeat;
+  }
+}
+
+/* Laptops and large tablets */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_2560_1600.png") center center / cover
+      no-repeat;
+  }
+}
+
+/* Standard desktop screens */
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_1920_1200.png") center center / cover
+      no-repeat;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1365px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_1536_2048.png") center center / cover
+      no-repeat;
+  }
+}
+
+/* Large phones */
+@media (min-width: 415px) and (max-width: 767px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_1080_1920.png") center center / cover
+      no-repeat;
+  }
+}
+
+/* Small phones */
+@media (max-width: 414px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_800_1200.png") center center / cover
+      no-repeat;
+  }
+}
 @media print {
   html,
   body,
