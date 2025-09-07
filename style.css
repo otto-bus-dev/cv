@@ -102,7 +102,7 @@ video {
 
 :root {
   --base: #191724;
-  --surface: #1f1d2ef4;
+  --surface: #1f1d2ecc;
   --overlay: #26233a;
   --highlight: #eb6f92;
   --love: #eb6f92;
@@ -129,16 +129,27 @@ html {
 /*   background: url("rose_pine_maze.png") center center / cover no-repeat; */
 /*   pointer-events: none; */
 /* } */
-
+.fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url("rose_pine_maze_2000_1293.png") center center / cover
+    no-repeat;
+  pointer-events: none;
+}
 body {
+  position: relative;
   margin: 0;
   font-family: "JetBrains Mono Nerd Font", monospace !important ;
   /* background: var(--base); */
-  background-image: url("rose_pine_maze.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  /* background-image: url("rose_pine_maze.png"); */
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center center; */
   color: var(--text);
   text-align: justify;
   font-size: 14px;
@@ -186,7 +197,7 @@ section ul {
   height: 100vh;
   margin: 0 auto;
   gap: 24px;
-  background-color: #191724dd;
+  background-color: #191724aa;
 }
 .column {
   flex: 1;
@@ -507,6 +518,13 @@ table.bar-graph .foam {
 }
 
 @media (max-width: 1000px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_1000_2234.png") center center / cover
+      no-repeat;
+  }
+  /* body { */
+  /*   background-image: url("rose_pine_maze_1000_2000.png"); */
+  /* } */
   .container {
     flex-direction: column;
     height: auto;
@@ -573,6 +591,13 @@ table.bar-graph .foam {
   }
 }
 @media (max-width: 700px) {
+  .fixed-bg {
+    background: url("rose_pine_maze_700_2234.png") center center / cover
+      no-repeat;
+  }
+  /* body { */
+  /*   background-image: url("rose_pine_maze_700_2234.png"); */
+  /* } */
   .container {
     flex-direction: column;
     height: auto;
@@ -588,7 +613,7 @@ table.bar-graph .foam {
 
   .content {
     margin-left: 0;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 100%;
     height: auto;
   }
