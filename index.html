@@ -12,6 +12,10 @@
   <div class="fixed-bg"></div>
   <!-- <a href="javascript:window.print()" class='print-button no-print'>󰐪</a> -->
   <a href="ldelaunay-cv.pdf" target="_blank" class='print-button no-print'>󰐪</a>
+  <button id="language-toggle" class="language-toggle no-print" onclick="toggleLanguage()">
+    <span id="lang-flag">🇺🇸</span>
+    <span id="lang-text">EN</span>
+  </button>
   
 
   <div class="container" >
@@ -19,14 +23,14 @@
       <div class="profile">
         <img src="profile.jpeg" alt="Photo de profil" class="profile-photo">
         <h1>Ludovic Delaunay</h1>
-        <h2>Senior Data Engineer <br/> Technical Lead</h2>
+        <h2 data-translate="job-title">Senior Data Engineer <br/> Technical Lead</h2>
       </div>
       <p class="contact">
           <a href="mailto:ludovic.delaunay@outlook.fr"></a>
           <a href="https://www.linkedin.com/in/ludovicdelaunay/" target="_blank"></a>
           <a href="https://github.com/otto-bus-dev" target="_blank"></a>
       </p>
-      <h2 class="print-only" >Profil</h2>
+      <h2 class="print-only" data-translate="profile-title">Profil</h2>
       <div class="summary">
         <div class="stats">
           <div class="pie-container">
@@ -37,15 +41,15 @@
             <div class="legend legend4" style="color:#191724 !important;">20%</div>
           </div>
           <ul class="skills" style="text-align:center">
-            <li class="gold">Management</li>
-            <li class="pine">Projet</li>
-            <li class="iris">Data</li>
-            <li class="foam">Web</li>
+            <li class="gold" data-translate="management">Management</li>
+            <li class="pine" data-translate="projects">Projet</li>
+            <li class="iris" data-translate="data">Data</li>
+            <li class="foam" data-translate="web">Web</li>
           </ul>
         </div>
         <div class="text" >
           <div class="print-only m">
-            <p>
+            <p data-translate="profile-summary">
               Ingénieur Data expérimenté, spécialisé dans la modernisation des infrastructures analytiques, la gestion de projets BI, l’architecture Cloud (Azure), et le management d’équipes techniques. 
               Plus de 15 ans d’expérience en conception, développement et pilotage de solutions Data dans des contextes exigeants (finance, médias, conseil).
             </p>
@@ -53,7 +57,7 @@
         </div>
       </div>
       <div class="skills">
-        <h2>Compétences</h2>
+        <h2 data-translate="skills-title">Compétences</h2>
         <ul class="skills">
           <li class='gold'>RH</li>
           <li class='gold'>Finance</li>
@@ -92,14 +96,14 @@
     </aside>
     <main class="content column">
       <section id="summary" class="no-print large">
-        <h2>Profil</h2>
-        <p>
+        <h2 data-translate="profile-title">Profil</h2>
+        <p data-translate="profile-summary">
           Ingénieur Data expérimenté, spécialisé dans la modernisation des infrastructures analytiques, la gestion de projets BI, l’architecture Cloud (Azure), et le management d’équipes techniques. 
           Plus de 15 ans d’expérience en conception, développement et pilotage de solutions Data dans des contextes exigeants (finance, médias, conseil).
         </p>
       </section>
       <section id="experience">
-        <h2>Expérience</h2>
+        <h2 data-translate="experience-title">Expérience</h2>
         <div class="experience">
           <h3>Candriam – Senior Data Engineer</h3>
           <span class="date">Novembre 2024 – Présent (10 mois)</span>
@@ -513,7 +517,7 @@
         </div>
       </section>
       <section id="education">
-        <h2>Formation</h2>
+        <h2 data-translate="education-title">Formation</h2>
         <div class="education">
           <h3>ESIEA - École d'Ingénieur·e·s d'un numérique utile</h3>
           <span class="date">2004 – 2007</span>
@@ -529,8 +533,8 @@
           </p>
         </div>
       </section>
-            <section id="certifications">
-        <h2>Certifications</h2>
+      <section id="certifications">
+        <h2 data-translate="certifications-title">Certifications</h2>
         <ul class="certifications">
           <li>
             <strong>Microsoft Certified: Azure Data Fundamentals</strong><br>
@@ -555,20 +559,101 @@
         </ul>
       </section>
       <section id="languages">
-        <h2>Langues</h2>
+        <h2 data-translate="languages-title">Langues</h2>
         <ul class="languages">
-          <li>Français (Natif)</li>
-          <li>Anglais (Professionnel)</li>
+          <li data-translate="french">Français (Natif)</li>
+          <li data-translate="english">Anglais (Professionnel)</li>
         </ul>
       </section>
       <section id="hobbies">
-        <h2>Hobbies</h2>
+        <h2 data-translate="hobbies-title">Hobbies</h2>
         <ul class="hobbies">
-          <li>Sports : <span> 󰒸    󰔁 </span></li>
-          <li>Loisirs : <span> 󰟞  󰊗 </span></li>
+          <li data-translate="sports">Sports : <span> 󰒸    󰔁 </span></li>
+          <li data-translate="leisure">Loisirs : <span> 󰟞  󰊗 </span></li>
         </ul>
       </section>
     </main>
   </div>
+
+<script>
+// Internationalization system
+const translations = {
+  fr: {
+    'job-title': 'Senior Data Engineer <br/> Technical Lead',
+    'profile-title': 'Profil',
+    'skills-title': 'Compétences',
+    'experience-title': 'Expérience',
+    'education-title': 'Formation',
+    'certifications-title': 'Certifications',
+    'languages-title': 'Langues',
+    'hobbies-title': 'Hobbies',
+    'management': 'Management',
+    'projects': 'Projet',
+    'data': 'Data',
+    'web': 'Web',
+    'french': 'Français (Natif)',
+    'english': 'Anglais (Professionnel)',
+    'sports': 'Sports : <span> 󰒸    󰔁 </span>',
+    'leisure': 'Loisirs : <span> 󰟞  󰊗 </span>',
+    'profile-summary': 'Ingénieur Data expérimenté, spécialisé dans la modernisation des infrastructures analytiques, la gestion de projets BI, l\'architecture Cloud (Azure), et le management d\'équipes techniques. Plus de 15 ans d\'expérience en conception, développement et pilotage de solutions Data dans des contextes exigeants (finance, médias, conseil).'
+  },
+  en: {
+    'job-title': 'Senior Data Engineer <br/> Technical Lead',
+    'profile-title': 'Profile',
+    'skills-title': 'Skills',
+    'experience-title': 'Experience',
+    'education-title': 'Education',
+    'certifications-title': 'Certifications',
+    'languages-title': 'Languages',
+    'hobbies-title': 'Hobbies',
+    'management': 'Management',
+    'projects': 'Project',
+    'data': 'Data',
+    'web': 'Web',
+    'french': 'French (Native)',
+    'english': 'English (Professional)',
+    'sports': 'Sports: <span> 󰒸    󰔁 </span>',
+    'leisure': 'Leisure: <span> 󰟞  󰊗 </span>',
+    'profile-summary': 'Experienced Data Engineer, specialized in modernizing analytical infrastructures, managing BI projects, Cloud architecture (Azure), and leading technical teams. Over 15 years of experience in designing, developing and managing Data solutions in demanding contexts (finance, media, consulting).'
+  }
+};
+
+let currentLanguage = localStorage.getItem('cv-language') || 'fr';
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+  localStorage.setItem('cv-language', currentLanguage);
+  updateLanguage();
+}
+
+function updateLanguage() {
+  const langFlag = document.getElementById('lang-flag');
+  const langText = document.getElementById('lang-text');
+  
+  if (currentLanguage === 'fr') {
+    langFlag.textContent = '🇺🇸';
+    langText.textContent = 'EN';
+  } else {
+    langFlag.textContent = '🇫🇷';
+    langText.textContent = 'FR';
+  }
+  
+  // Update all elements with data-translate attributes
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    if (translations[currentLanguage][key]) {
+      element.innerHTML = translations[currentLanguage][key];
+    }
+  });
+  
+  // Update document language
+  document.documentElement.lang = currentLanguage;
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateLanguage();
+});
+</script>
 </body>
 </html>
